@@ -48,3 +48,46 @@ Movie.prototype.getCast = function(){
 Movie.prototype.setCast = function(cast){
     this.actores = cast;
 }
+
+/************* MODULE ****************/
+
+
+ var myMovie = (function(title, rating, id){
+
+  /** var myPrivateVar = 0;
+  var myPrivateMethod = function( someText ){
+    console.log(someText);
+  }; **/
+  
+  this.title = title;
+  
+  return {
+	
+	/**
+    myPublicVar: "foo",  
+    myPublicFunction: function(bar){
+      myPrivateVar++;
+      myPrivateMethod(bar);
+    } **/
+	
+    getTitle:function(){
+		return  this.title
+		},
+    setTitle: function(title){
+		this.title = title
+		},
+    getRating: function(){  
+		return  this.rating 
+		},
+    setRating: function(rating){ 
+		this.rating = rating
+		}, 
+    getId: function(){
+		return  this.id 
+		},
+    setId: function(id){ 
+		this.id = id
+		}
+  };
+})();
+
